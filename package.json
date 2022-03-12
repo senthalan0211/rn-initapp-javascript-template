@@ -1,0 +1,8 @@
+{
+  "name": "rn-initapp-javascript-template",
+  "version": "0.0.1",
+  "description": "Initial React Native Project Template",
+  "repository": "https://github.com/senthalan2/rn-initapp-javascript-template.git",
+  "author": "Senthalan",
+  "license": "MIT"
+}
