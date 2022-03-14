@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   indicatorContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: 25,
     justifyContent: 'center',
   },
   scrollIndicatorDots: {
