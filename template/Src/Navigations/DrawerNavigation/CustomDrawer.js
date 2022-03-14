@@ -1,7 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity, View, FlatList} from 'react-native';
 import React from 'react';
 import {useState} from 'react';
-import {BLACKCOLOR, WHITECOLOR} from '../../Utilities/Colors';
+import {COLORS} from '../../Utilities/Constants';
 const CustomDrawer = ({navigation}) => {
   const [selectedValue, setselectedValue] = useState(0);
 
@@ -14,8 +14,8 @@ const CustomDrawer = ({navigation}) => {
   };
 
   const renderDrawerItem = ({item, index}) => {
-    const bgColor = selectedValue === index ? '#F5F5F5' : WHITECOLOR;
-    const textColor = BLACKCOLOR;
+    const bgColor = selectedValue === index ? '#F5F5F5' : COLORS.white;
+    const textColor = COLORS.black;
     return (
       <TouchableOpacity
         style={[
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   labelStyle: {
-    color: WHITECOLOR,
+    color: COLORS.white,
     fontSize: 14,
   },
   labelContainer: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: 1,
-    backgroundColor: BLACKCOLOR,
+    backgroundColor: COLORS.black,
     opacity: 0.1,
     marginVertical: 10,
   },

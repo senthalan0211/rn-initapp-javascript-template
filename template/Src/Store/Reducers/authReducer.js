@@ -1,5 +1,13 @@
 const initialAuthState = {
   userToken: null,
+  isSeenIntro: false,
+};
+
+const setisSeenIntro = (state, action) => {
+  return {
+    ...state,
+    isSeenIntro: action.isSeenIntro,
+  };
 };
 
 const login = (state, action) => {
@@ -21,6 +29,8 @@ export default function (state = initialAuthState, action) {
       return login(state, action);
     case 'LOGOUT':
       return logout();
+    case 'IS_SEEN_INTRO':
+      return setisSeenIntro(state, action);
     default:
       return state;
   }

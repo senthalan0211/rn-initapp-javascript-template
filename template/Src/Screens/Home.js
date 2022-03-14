@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import CustomHeader from '../Components/CustomHeader';
-import {WHITECOLOR} from '../Utilities/Colors';
+import {COLORS} from '../Utilities/Constants';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ const Home = () => {
         navigation={navigation}
         title="Home Screen"
         enableBack={false}
-        bgColor={WHITECOLOR}
+        bgColor={COLORS.white}
         enableMenu
         onPressMenu={() => {
           navigation.openDrawer();
@@ -28,6 +28,6 @@ export default Home;
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: WHITECOLOR,
+    backgroundColor: COLORS.white,
   },
 });

@@ -1,8 +1,8 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeIcon from '../Assets/Svgs/Icons/home.svg';
-import {BLACKCOLOR} from '../Utilities/Colors';
 import HomeDrawerNavigation from './DrawerNavigation/HomeDrawerNavigation';
+import {COLORS} from '../Utilities/Constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +27,7 @@ const TabNavigation = () => {
       })}>
       <Tab.Screen
         options={{
-          tabBarLabelStyle: {color: BLACKCOLOR},
+          tabBarLabelStyle: {color: COLORS.black},
           tabBarLabel: 'Home',
         }}
         name="DrawerHome"

@@ -1,11 +1,10 @@
 import React from 'react';
 import {View, StatusBar} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {WHITECOLOR} from '../Utilities/Colors';
-import {IS_IOS} from '../Utilities/Constants';
+import {COLORS, IS_IOS} from '../Utilities/Constants';
 
 const CustomStatusBar = ({
-  barBackgroundColor = WHITECOLOR,
+  barBackgroundColor = COLORS.white,
   isContentLight = false,
 }) => {
   const topInset = useSafeAreaInsets().top;

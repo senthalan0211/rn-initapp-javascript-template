@@ -7,14 +7,15 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
 import MainStack from './Src/Stacks/MainStack';
 import RootStack from './Src/Stacks/RootStack';
-import {WHITECOLOR} from './Src/Utilities/Colors';
 import CustomStatusBar from './Src/Components/CustomStatusBar';
-import {IS_IOS} from './Src/Utilities/Constants';
+import {COLORS, IS_IOS} from './Src/Utilities/Constants';
+import Intro from './Src/Screens/Intro';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   const userToken = useSelector(state => state.auth.userToken);
+  const isSeenIntro = useSelector(state => state.auth.isSeenIntro);
 
   useEffect(() => {
     if (!IS_IOS) {
@@ -24,20 +25,31 @@ const App = () => {
 
   return (
     <SafeAreaProvider style={styles.mainContainer}>
-      <CustomStatusBar barBackgroundColor={WHITECOLOR} isContentLight={false} />
+      <CustomStatusBar
+        barBackgroundColor={COLORS.white}
+        isContentLight={false}
+      />
       <NavigationContainer>
         <Stack.Navigator>
-          {userToken ? (
-            <Stack.Screen
-              options={{headerShown: false}}
-              name="MainStack"
-              component={MainStack}
-            />
+          {isSeenIntro ? (
+            userToken ? (
+              <Stack.Screen
+                options={{headerShown: false}}
+                name="MainStack"
+                component={MainStack}
+              />
+            ) : (
+              <Stack.Screen
+                options={{headerShown: false}}
+                name="RootStack"
+                component={RootStack}
+              />
+            )
           ) : (
             <Stack.Screen
               options={{headerShown: false}}
-              name="RootStack"
-              component={RootStack}
+              name="Intro"
+              component={Intro}
             />
           )}
         </Stack.Navigator>

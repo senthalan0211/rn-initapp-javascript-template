@@ -3,13 +3,12 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import BackIcon from '../Assets/Svgs/Icons/back.svg';
 import MenuIcon from '../Assets/Svgs/Icons/menu.svg';
 import NotificationsIcon from '../Assets/Svgs/Icons/notifications.svg';
-import {WINDOW_WIDTH} from '../Utilities/Constants';
-import {BLACKCOLOR, WHITECOLOR} from '../Utilities/Colors';
+import {COLORS, WINDOW_WIDTH} from '../Utilities/Constants';
 
 const CustomHeader = ({
   title = '',
   navigation,
-  bgColor = WHITECOLOR,
+  bgColor = COLORS.white,
   setModal,
   isModal = false,
   paddingHorizontal = 0,
@@ -24,9 +23,9 @@ const CustomHeader = ({
   onPressNotification,
   onPressTextButton,
   onPressBackButton,
-  titleColor = BLACKCOLOR,
+  titleColor = COLORS.black,
   buttonTextSize = 12,
-  buttonTextColor = BLACKCOLOR,
+  buttonTextColor = COLORS.black,
 }) => {
   return (
     <>
